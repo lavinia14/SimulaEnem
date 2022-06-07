@@ -10,6 +10,8 @@ será redirecionado para uma página com perguntas.
 <h3>!! NOTE</h3> Antes de entrar via login, acesse via URL a página 'addPerguntas.php'
 que vai te redirecionar à um formulário para adicionar as perguntas no Banco de Dados.
 
+
+obs: A Base de Dados se encontra na pasta "databaseSQL/SimulaEnemBd".
 </br>
 
 `1 P.s.`: O botão de editar está na página de perguntas por conta de ser a página do administrador.
