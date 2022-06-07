@@ -1,0 +1,105 @@
+.card-table-link a{
+    text-decoration: none;
+    color: #ffffff;
+}   
+.card-table-block div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-table-column-father{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    user-select: none;
+}
+.card-table-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(50% - 10px);
+    height: 250px;
+    background: #7DA0FA;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.card-table-column:hover,
+.card-table-column:active{
+    text-decoration: none;
+    color: #ffffff;
+}
+@media screen and (max-width: 600px) {
+   .card-table-column{
+       width: 100%;
+       margin-right: 0;
+   }     
+}
+
+.container-provas{
+    width: 800px;
+    height: auto;
+    padding: 50px 0;
+}
+
+.container-perguntas{
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #cecece;
+}
+
+.pergunta-conteudo{
+    margin-bottom: 25px;
+}
+.respostas-conteudo-certa{
+    color: #29db23;
+}
+.respostas-conteudo-errada{
+    color: #db2323; 
+}
+.respostas-conteudo ul li{
+    display: flex;
+    align-items: center;
+}
+.respostas-conteudo ul li input{
+    margin-right: 10px;
+}
+.respostas-conteudo ul{
+    list-style: none;
+}
+
+.container-provas button{
+    padding: 11.5px 28.5px;
+    background: #279dec;
+    color: #ffffff;
+    border-radius: 5px;
+    border: 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.container-provas button:hover{
+    opacity: .9;
+}
+.acertos{
+    width: 100%;
+}
+.acerto-content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.acerto-content p {
+    width: 100%;
+}
+.acerto-content p{
+    padding: 25px;
+    margin: 10px 0;
+    background-color: #7da0fa60;
+    color: #414141;
+    border-radius: 5px;
+}
