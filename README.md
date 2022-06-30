@@ -21,7 +21,13 @@ e sem língua estrangeira e o segundo segue a prova padrão.
 Toda vez que for cadastrar ou editar uma questão, tem que adicionar uma imagem para que ela seja cadastrada.
 Para questões sem imagem, o administrador deverá, manualmente, adicionar a mensagem "sem imagem" no campo imagem no banco.  
 
+<<<<<<< HEAD
 CASO HAJA DÚVIDAS (Funcionamento da lógica do sistema):
+=======
+
+obs: A Base de Dados se encontra na pasta "databaseSQL/SimulaEnemBd".
+</br>
+>>>>>>> d5054431a6cc82a8625e94a22fbe88eaac632295
 
 1-Uma prova é ligada às suas respectivas semanas por meio do ano em que ocorreu (aqui o ano funciona como um id);
 
