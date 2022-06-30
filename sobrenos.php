@@ -1,9 +1,3 @@
-<?php
-  require_once('bd/conexão.php');
-  require_once('pages/getProva.php');
-
-  $prova = new GetProvas();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +19,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <!--link rel="shortcut icon" href="images/favicon.png" /-->
+  <link rel="shortcut icon" href="images/logoSE.svg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -38,14 +32,11 @@
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <div class="barra">
-            <!--div class="barra-conteudo">
-                <div class="barra-logo">
-                    <img src="img/logoSimulaEnem.png">
-                </div-->
+            
                 <div class="barra-diretorio">
-                    <a href='login.php'>Login</a>
-                    <a href='register.php'>Cadastre-se</a>
-                    <a class="barra-link-sobrenos" href="index.php">Início</a>
+                    <a href='login.php' class="btn btn-primary card-table-link">Login</a>
+                    <a href='register.php' class="btn btn-primary card-table-link">Cadastre-se</a>
+                    <a href="index.php" class="btn btn-primary card-table-link">Início</a>
                 </div>
             </div>
         </div>
@@ -89,40 +80,61 @@
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
+              <center>
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">SOBRE NÓS</h3>
-                  <h6 class="font-weight-normal mb-0">Aqui é onde falaremos sobre nós! <span class="text-primary">Que legal!</span></h6>
+                  <h2 class="font-weight-bold">SIMULA ENEM</h2>
+                  <h4 class="font-weight-normal mb-0" >O sistema Simula Enem oferece aos estudantes uma forma prática e simples de se realizar simulados online, entregando as provas de todos os anos do ENEM para estudo.
+                      Busca otimizar o tempo do aluno e evitar o desperdício com impressões de simulados. Conta 
+                      com a avaliação dividida em dois dias e um cronômetro na página da prova para o estudante 
+                      se situar quanto ao tempo de simulação. <br> <br> <center><span class="text-primary">Não há no simulado: Questões de Língua Estrangeira, nem Redação. </span></center></h4>
+                  
+                      <br><br><br>
+                  <h3 class="font-weight-bold">QUEM SOMOS?</h3>
+                  <h4 class="font-weight-normal mb-0">Estudantes do Ensino Médio no Instituto Federal de Educação, Ciência e Tecnologia Baiano. </h4>
                 </div>
-                <!--div class="col-12 col-xl-4">
-                 Menu date - tirei o calendário daqui
-                </div-->
+                </center>
+
+                <div class="main-panel">
+                  <div class="content-wrapper">
+                    <div class="row">
+                      <div class="col-lg-4 grid-margin stretch-card">
+                        <div class="card card-tale">
+                          <div class="card-body">
+                            <h4 style="color:white; align-items: center; text-align: center; justify-content: center;" class="card-title">Lavínia Guimarães</h4>
+                            <center><img id="barChart" src="images/lav.svg" alt="people"></center>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-4 grid-margin stretch-card">
+                        <div class="card card-light-danger">
+                          <div class="card-body">
+                            <h4 style="color:white; align-items: center; text-align: center; justify-content: center;" class="card-title">Lílian Beatriz</h4>
+                            <center><img id="barChart" src="images/lilian.svg" alt="people"></center>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-4 grid-margin stretch-card">
+                        <div class="card card-light-blue">
+                          <div class="card-body">
+                            <h4 style="color:white; align-items: center; text-align: center; justify-content: center;" class="card-title">Nicole Melo</h4>
+                            <center><img id="barChart" src="images/nic.svg" alt="people"></center>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-
 
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
           </div>
           <div class="d-sm-flex justify-content-center justify-content-sm-between">

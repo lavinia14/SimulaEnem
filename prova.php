@@ -2,8 +2,8 @@
   require_once('bd/conexão.php');
   require_once('pages/getProvas.php');
   require_once('pages/getPerguntas.php');
-  $idProva = isset($_GET['id'])? $_GET['id']: 0;
-  $prova = new GetProvas($idProva);
+  $idProvas = isset($_GET['id'])? $_GET['id']: 0;
+  $prova = new GetProvas($idProvas);
   $perguntas = new GetPerguntas();
 ?>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Simula Enem</title>
+  <title>Prova</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -27,7 +27,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <!--link rel="shortcut icon" href="images/favicon.png" /-->
+  <link rel="shortcut icon" href="images/logoSE.svg">
   <link rel="stylesheet" href="css/style.css?ver=1.0.0.2">
 </head>
 
@@ -44,28 +44,14 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu"></span>
         </button>
-        <!--ul class="navbar-nav mr-lg-2">
-         tirei o search daqui
         </ul-->
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item dropdown">
             <div id="timer">Cronometro</div>
 
           </li>
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face28.jpg" alt="profile" />
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Settings
-              </a>
-              <a class="dropdown-item">
-                <i class="ti-power-off text-primary"></i>
-                Logout
-              </a>
-            </div>
+          
+            
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
@@ -99,11 +85,6 @@
           </div>
         </div>
       </div>
-      <!--div id="right-sidebar" class="settings-panel">
-        tirei coisa daqui
-      </div-->
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -121,24 +102,10 @@
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="index.php"> Logout </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> Settings </a></li>
               </ul>
             </div>
           </li>
-          <!--li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
-          </li-->
+          
         </ul>
       </nav>
       <!-- partial -->
@@ -155,12 +122,13 @@
 
           <div class="container-provas">
             <?php
-              if(count($perguntas->perguntas($idProva)) > 0){
+              if(count($perguntas->perguntas($idProvas)) > 0){
             ?>
             <form action="acertos.php" method="post">
             <?php
             $cont = 1;
-            foreach($perguntas->perguntas($idProva) as $value){
+            foreach($perguntas->perguntas($idProvas) as $value){
+
               echo '<div class="container-perguntas">';
               echo '<div class="pergunta-conteudo">'.  $value['titulo'] .'</div>';
               if(file_exists('images/upload/'.  $value['imagem'] .'')){
@@ -175,7 +143,6 @@
                 $contTwo++;
               }
               $cont++;
-              echo '<div><a href="editar.php?id='. $value['id'] .'">Editar</a></div>';
               echo '</div>';
             }        
             ?>
@@ -192,39 +159,22 @@
 
 
           </div>
-          <!---div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-                  tirei coisas daqui
-            </div>
-          </div-->
+          
           <div class="row">
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card">
-                <!--div class="card-body">
-                  tirei coisas daqui
-                  </div-->
+               
               </div>
             </div>
           </div>
-          <!--div class="col-md-4 stretch-card grid-margin">
-              <div class="row">
-               tirei coisas daqui
-            </div-->
+        
           <div class="col-md-4 stretch-card grid-margin">
-            <!--div class="card">
-                tirei coisas daqui    
-              </div-->
+           
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
-
-              <!--div class="card-body">
-                  tirei coisas daqui
-                </div-->
-
-
             </div>
           </div>
         </div>

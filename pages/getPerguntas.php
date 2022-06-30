@@ -5,7 +5,7 @@ class GetPerguntas extends Conexao
     public function perguntas($id)
     {
         $banco = $this->conectar();
-        $query = "SELECT * FROM perguntas WHERE idProva = :id";
+        $query = "SELECT * FROM perguntas WHERE idProvas = :id";
         $stmt = $banco->prepare($query);
         $stmt->bindValue(":id", $id);
         if($stmt->execute()){

@@ -21,12 +21,13 @@ class ValidarCadastro extends Conexao
         $banco = $this->conectar();
 
         if (!empty($this->nome) and !empty($this->email) and !empty($this->senha)) {
-            $query = "INSERT INTO usuario (nome, email, senha) VALUES (:nome, :email, :senha)";
+            $query = "INSERT INTO usuario (nome, email, senha, permissao) VALUES (:nome, :email, :senha, :permissao)";
 
             $result = $banco->prepare($query);
             $result->bindParam(':nome', $this->nome);
             $result->bindParam(':email', $this->email);
             $result->bindParam(':senha', $this->senha);
+            $result->bindValue(':permissao', 1);
             if ($result->execute()) {
                 return true;
             }

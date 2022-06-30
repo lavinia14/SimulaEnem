@@ -12,7 +12,7 @@ require_once('bd/conexão.php')
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Adicionar perguntas</title>
+    <title>Simula Enem</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="vendors/feather/feather.css">
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -35,46 +35,31 @@ require_once('bd/conexão.php')
 </style>
 
 <body>
-    <form action="pages/ValidarPerguntas.php" method="POST" enctype="multipart/form-data">
+    <form action="pages/validarSemana.php" method="POST" enctype="multipart/form-data">
         <div class="container-scroller">
             <div class="container-fluid container-fluid-body page-body-wrapper full-page-wrapper" style="display: flex; justify-content: center; align-items: center; background: #F5F7FF; width: 100%!important;">
                 <div class="content-wrapper d-flex align-items-center auth px-0">
                     <div class="row w-100 mx-0">
                         <div class="col-lg-4 mx-auto cadastro-body">
                             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-                                <h4>Cadastro de questões:</h4>
-                                <h6 class="font-weight-light">Adicione sua pergunta!</h6>
+                                <h4>Cadastro de Semana:</h4>
+                                <h6 class="font-weight-light">Adicione uma semanas para sua prova!</h6>
                                 <div class="pt-3">
-                                <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" name="titulo" id="" placeholder="Título da questão">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-lg" name="id" placeholder="Idsemana(1/2)Ano(Ex:12015)">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" name="id" id="" placeholder="Id da questão: númeroquestãoAno (ex: 12015)">
+                                        <input type="text" class="form-control form-control-lg" name="anoProva" placeholder="Ano da prova que deseja adicionar">
                                     </div>
-
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" name="texto" id="" placeholder="Texto da questão">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" name="idProvas" id="" placeholder="IdSemana: semana(1/2)AnoProva (ex: 12015)">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="file" class="form-control form-control-lg" name="imagem" id="imagem">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <select name="areaConhecimento" class="form-control form-control-lg" placeholder="Area de Conhecimento">
-                                            <option value="Linguagens">Linguagens, códigos e suas tecnologias</option>
-                                            <option value="Ciências humanas">Ciências humanas e suas tecnologias</option>
-                                            <option value="Ciências da Natureza">Ciências da natureza e suas tecnologias</option>
-                                            <option value="Matemática">Matemática suas tecnologias</option>
+                                        <select name="semana" class="form-control form-control-lg" placeholder="Semana da prova">
+                                            <option value="1">1° semana</option>
+                                            <option value="2">2° semana</option>
                                         </select>
                                     </div>
 
                                     <div class="mt-3">
-                                        <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">CADASTRAR PERGUNTA</button>
+                                        <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">CADASTRAR SEMANA</button>
                                     </div>
                             </div>
                         </div>

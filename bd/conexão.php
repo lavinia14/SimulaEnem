@@ -5,7 +5,7 @@ class Conexao
 
     private $host = 'localhost';
     private $user = 'root';
-    private $password = '';
+    private $password = '1234';
     private $dbname = 'simula';
 
     public function conectar()

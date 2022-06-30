@@ -14,7 +14,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Simula Enem</title>
+  <title>Pontuação</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -28,7 +28,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <!--link rel="shortcut icon" href="images/favicon.png" /-->
+  <link rel="shortcut icon" href="images/logoSE.svg">
   <link rel="stylesheet" href="css/style.css?ver=1.0.0.3">
 </head>
 
@@ -45,19 +45,12 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu"></span>
         </button>
-        <!--ul class="navbar-nav mr-lg-2">
-         tirei o search daqui
-        </ul-->
+       
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item dropdown">
-            <!--a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-              tirei a notificação daqui
-            </div-->
+            
           </li>
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face28.jpg" alt="profile" />
-            </a>
+          
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
@@ -101,11 +94,7 @@
           </div>
         </div>
       </div>
-      <!--div id="right-sidebar" class="settings-panel">
-        tirei coisa daqui
-      </div-->
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
+      
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -123,7 +112,6 @@
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="index.php"> Logout </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> Settings </a></li>
               </ul>
             </div>
           </li>
@@ -144,9 +132,7 @@
           <?php
             $pontuacao = 0;
             $total = 0;
-            //echo "<pre>";
-            //print_r($_POST);
-            //echo "</pre>";
+            
             $cont = 1;
             foreach ($_POST as $key => $value) {
               $keyNew = str_replace('pergunta-', '', $key);
@@ -182,44 +168,30 @@
                 <?php if(((100 / $total) * $pontuacao) == 0){ ?>
                 <p>Vixi! infelizmente você não acertou nenhuma questão. Pontuação: <?= ((100 / $total) * $pontuacao)  ?>%</p>
                 <?php }else{ ?>
-                  <p>Parabéns! você acertou: <?= ((100 / $total) * $pontuacao)  ?>% das questões</p>
+                  <p>Parabéns! você acertou: <?= number_format(((100 / $total) * $pontuacao), 1, '.', '') ?>% das questões</p>
                 <?php } ?>
               </div>
             </div>
 
           </div>
           </div>
-          <!---div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-                  tirei coisas daqui
-            </div>
-          </div-->
           <div class="row">
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card">
-                <!--div class="card-body">
-                  tirei coisas daqui
-                  </div-->
+                
               </div>
             </div>
           </div>
-          <!--div class="col-md-4 stretch-card grid-margin">
-              <div class="row">
-               tirei coisas daqui
-            </div-->
+          
           <div class="col-md-4 stretch-card grid-margin">
-            <!--div class="card">
-                tirei coisas daqui    
-              </div-->
+            
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
 
-              <!--div class="card-body">
-                  tirei coisas daqui
-                </div-->
+              
 
 
             </div>

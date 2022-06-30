@@ -7,13 +7,13 @@ require_once('bd/conexão.php')
 <html lang="en">
 
 <head>
-  <!--peguei de Lavinia-->
+  
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Simula Enem</title>
+  <title>Login</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -24,7 +24,7 @@ require_once('bd/conexão.php')
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <!--link rel="shortcut icon" href="images/favicon.png" /-->
+  <link rel="shortcut icon" href="images/logoSE.svg">
 </head>
 <style>
   @media (min-width: 992px){
@@ -49,7 +49,7 @@ require_once('bd/conexão.php')
                 <h6 class="font-weight-light">Faça login para continuar.</h6>
                 <form class="pt-3">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" name="email" id="exampleInputEmail1" placeholder="Usuário">
+                    <input type="email" class="form-control form-control-lg" name="email" id="exampleInputEmail1" placeholder="Email">
                   </div>
                   <div class="form-group">
                     <input type="password" class="form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="Senha">
@@ -59,12 +59,8 @@ require_once('bd/conexão.php')
                   </div>
                   <div class="my-2 d-flex justify-content-between align-items-center">
                     <div class="form-check">
-                      <!--label class="form-check-label text-muted">
-                        <input type="checkbox" class="form-check-input">
-                        Mantenha-me conectado
-                      </label-->
+                     
                     </div>
-                    <a href="#" class="auth-link text-black">Esqueceu a senha?</a>
                   </div>
                   <div class="text-center mt-4 font-weight-light">
                     Não tem uma conta? <a href="register.php" class="text-primary">Criar</a>

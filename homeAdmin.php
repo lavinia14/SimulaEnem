@@ -1,8 +1,8 @@
 <?php
   require_once('bd/conexão.php');
-  /*require_once('pages/getProva.php');
+  require_once('pages/getProva.php');
 
-  $prova = new GetProvas();*/
+  $prova = new GetProvas();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Simula Enem</title>
+  <title>Home Administrador</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -33,18 +33,26 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="home.php"><img src="images/Component1Logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="home.php"><img src="images/Component2MiniLogo.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="home.html"><img src="images/Component1Logo.svg" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="home.html"><img src="images/Component2MiniLogo.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <div class="barra">
-                <div class="barra-diretorio">
-                    <a href='login.php' class='btn btn-primary card-table-link'>Login</a>
-                    <a href='register.php' class='btn btn-primary card-table-link'>Cadastro</a>
-                    <a class='btn btn-primary card-table-link' href="sobrenos.php">Sobre nós</a>
-                </div>
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown">
+            
+          </li>
+           
+              
             </div>
-        </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
       </div>
     </nav>
     <!-- partial -->
@@ -68,41 +76,83 @@
           </div>
         </div>
       </div>
+      
+      <nav class="sidebar sidebar-offcanvas " id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="home.php">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Home</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">User Pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="index.php"> Logout </a></li>
+              </ul>
+            </div>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="adminPage.php"> Voltar </a></li>
+              </ul>
+            </div>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- partial -->
       <div class="main-panel">
-        <div class="content-wrapper content-wrapper-body">
-          <div class="row content-wrapper-row">
+        <div class="content-wrapper">
+          <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h1 class="font-weight-bold">Simula Enem</h1>
-                  <h3><span class="text-primary">Sua plataforma gratuita para se preparar para o ENEM!</span></h3>
-                  <br>
-                  <button type="button" class="btn btn-primary card-table-link"><a href="register.php"><h4>Cadastre-se</h4></a></button>
+                  <h3 class="font-weight-bold">Bem vindo, Administrador!</h3>
+                  <h4 class="font-weight-normal mb-0">Escolha a prova onde está a questão que deseja editar!</h4>
                 </div>
                 
               </div>
             </div>
           </div>
-          <div class="row content-wrapper-row">
-            <div class="col-md-6 grid-margin stretch-card content-wrapper-img">
-                  <img src="images/dashboard/testeonline.svg" alt="people">
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card tale-bg">
+                <div class="card-people ">
+                <img src="images/dashboard/Hand coding-amico.svg" alt="people">
+                </div>
+              </div>
             </div>
-          </div>  
+            <div class="col-md-6 grid-margin transparent">
+              <div class="row">
+                <?php 
+                  foreach($prova->provas() as $valueProvas):
+                ?>
+                <div class="col-md-6 mb-4 stretch-card transparent">
+                  <div class="card card-table-link card-light-blue">
+                    <a href="diasAdmin.php?id=<?= $valueProvas['ano'] ?>">
+                    <div class="card-body">
+                      <p class="mb-4">Prova do ano de:</p>
+                      <p class="fs-30 mb-2"><?= $valueProvas['ano'] ?></p>
+                      <!--p></p-->
+                    </div>
+                  </a>
+                  </div>
+                </div>
+                <?php endforeach; ?>
+              </div>
+            </div>
+          </div>
+          
+          
         </div>
-        <!-- content-wrapper ends -->
-
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
-          </div>
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span> 
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block"><a href="https://storyset.com/people">People illustrations by Storyset</a></span>
-          </div>
-        </footer> 
-        <!-- partial -->
+        
       </div>
       <!-- main-panel ends -->
     </div>   

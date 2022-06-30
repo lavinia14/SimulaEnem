@@ -11,7 +11,7 @@ class GetProvas extends Conexao
     {
         $banco = $this->conectar();
 
-            $query = "SELECT * FROM provas WHERE idProva = :id";
+            $query = "SELECT * FROM provas WHERE anoProva = :id";
 
             $result = $banco->prepare($query);
             $result->bindValue(':id', $this->id);
@@ -35,4 +35,5 @@ class GetProvas extends Conexao
             }
         return [];
     }
+    
 }

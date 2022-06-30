@@ -13,7 +13,7 @@ require_once('bd/conexão.php')
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Simula Enem</title>
+  <title>Cadastro</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -24,7 +24,7 @@ require_once('bd/conexão.php')
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <!--link rel="shortcut icon" href="images/favicon.png" /-->
+  <link rel="shortcut icon" href="images/logoSE.svg">
 </head>
 <style>
   @media (min-width: 992px){

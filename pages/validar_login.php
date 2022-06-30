@@ -25,9 +25,7 @@ class ValidarLogin extends Conexao
             $result->bindParam(':senha', $this->senha);
             if ($result->execute()) {
                 $dados = $result->fetchAll(PDO::FETCH_ASSOC);
-                if($dados[0]['email'] == $this->email AND $dados[0]['senha'] == $this->senha){
-                    return true;
-                }
+                return $dados[0]['permissao'];
             }
         }
         return false;
@@ -38,9 +36,14 @@ $email = filter_input(INPUT_POST, 'email', FILTER_UNSAFE_RAW);
 $senha = filter_input(INPUT_POST, 'password', FILTER_UNSAFE_RAW);
 
 $login = new ValidarLogin($email, $senha);
-
-if ($login->login()) {
-    header("Location: ../home.php");
+$loginAcesso = $login->login();
+if ($loginAcesso) {
+    if($loginAcesso == 1){
+        header("Location: ../home.php");
+    }else{
+        header("Location: ../adminPage.php");
+    }
 } else {
     header("Location: ../login.php");
 }
+
